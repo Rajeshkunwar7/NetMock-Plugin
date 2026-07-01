@@ -1,0 +1,44 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.9.0"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+
+    compileOnly fileTree(dir: '/Applications/Android Studio.app/Contents/lib', include: ['*.jar'])
+    compileOnly fileTree(dir: '/Applications/Android Studio.app/Contents/plugins/android/lib', include: ['*.jar'])
+}
+
+kotlin {
+    jvmToolchain(17)
+}
+
+tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+    kotlinOptions {
+        freeCompilerArgs += ["-Xskip-metadata-version-check"]
+    }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+tasks.register('buildPluginJar', Jar) {
+    from sourceSets.main.output
+    archiveBaseName.set('NetMockPlugin')
+    manifest {
+        attributes('Manifest-Version': '1.0')
+    }
+}
