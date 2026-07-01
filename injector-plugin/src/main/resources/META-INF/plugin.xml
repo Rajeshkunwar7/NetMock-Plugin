@@ -1,6 +1,10 @@
 <idea-plugin>
     <id>com.plugin.netmock</id>
     <name>NetMock</name>
+
+    <version>1.0.0</version>
+    <idea-version since-build="241" until-build="241.*" />
+
     <vendor email="kunwarrajesh0@gmial.com" company="NetMock Open">NetMock</vendor>
 
     <description><![CDATA[
