@@ -30,7 +30,7 @@ Add the lightweight runtime utility library into your application's **app-level*
 
 ```groovy
 dependencies {
-    debugImplementation 'com.github.Rajeshkunwar7:NetMock-Plugin:injector-agent:1.0.0'
+        debugImplementation "com.github.Rajeshkunwar7:NetMock-Plugin:1.0.2"
 }
 ```
 
