@@ -4,6 +4,9 @@ plugins {
     id 'maven-publish'
 }
 
+group = 'com.github.Rajeshkunwar7'
+version = '1.0.1'
+
 repositories {
     mavenCentral()
 }
@@ -17,14 +20,17 @@ kotlin {
 }
 
 tasks.named('jar', Jar) {
-    archiveFileName = 'NetMockAgent.jar'
+    archiveBaseName.set("netmock-agent")
 }
 
 publishing {
     publications {
         mavenJava(MavenPublication) {
             from components.java
-            artifactId = 'netmock-agent'
+
+            groupId = project.group
+            artifactId = "netmock-agent"
+            version = project.version
         }
     }
 }
