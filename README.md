@@ -30,8 +30,7 @@ Add the lightweight runtime utility library into your application's **app-level*
 
 ```groovy
 dependencies {
-    // We use debugImplementation so the agent code is completely stripped out of release builds!
-    debugImplementation 'com.github.yourusername:NetMockAgent:1.0.0'
+    debugImplementation 'com.github.Rajeshkunwar7:NetMock-Plugin:injector-agent:1.0.0'
 }
 ```
 
@@ -41,7 +40,6 @@ Drop the `NetMockInterceptor` directly into your network engine initialization c
 ```kotlin
 val okHttpClient = OkHttpClient.Builder()
     .apply {
-        // Only attach NetMock in debug environments to secure production traffic
         if (BuildConfig.DEBUG) {
             addInterceptor(com.agent.networkinjector.interceptor.NetMockInterceptor())
         }
