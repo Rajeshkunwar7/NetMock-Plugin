@@ -3,7 +3,8 @@
     <name>NetMock</name>
 
     <version>1.0.0</version>
-    <idea-version since-build="241" until-build="241.*" />
+
+   <idea-version since-build="241" until-build=""/>
 
     <vendor email="kunwarrajesh0@gmial.com" company="NetMock Open">NetMock</vendor>
 
