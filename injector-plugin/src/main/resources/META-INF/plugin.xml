@@ -2,11 +2,11 @@
     <id>com.plugin.netmock</id>
     <name>NetMock</name>
 
-    <version>1.0.0</version>
+    <version>1.0.1</version>
 
-   <idea-version since-build="241" until-build=""/>
+    <idea-version since-build="241" />
 
-    <vendor email="kunwarrajesh0@gmial.com" company="NetMock Open">NetMock</vendor>
+    <vendor company="NetMock Open" email="kunwarrajesh0@gmial.com">NetMock</vendor>
 
     <description><![CDATA[
     A lightweight network simulation dashboard for Android Studio. Inject realistic latency and mock server errors instantly across REST and GraphQL payloads over a live ADB bridge without external proxies.
@@ -16,9 +16,8 @@
     <depends>org.jetbrains.android</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow id="NetMock Dashboard"
-            anchor="right"
-            factoryClass="com.plugin.networkinjector.ui.NetMockToolWindowFactory"
-            icon="AllIcons.Nodes.PpWeb"/>
+        <toolWindow anchor="right" factoryClass="com.plugin.networkinjector.ui.NetMockToolWindowFactory"
+            icon="AllIcons.Nodes.PpWeb"
+            id="NetMock Dashboard" />
     </extensions>
 </idea-plugin>

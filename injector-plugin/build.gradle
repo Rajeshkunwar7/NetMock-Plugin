@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 buildscript {
     repositories {
         mavenCentral()
@@ -25,7 +27,7 @@ kotlin {
     jvmToolchain(17)
 }
 
-tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).configureEach {
+tasks.withType(KotlinCompile).configureEach {
     kotlinOptions {
         freeCompilerArgs += ["-Xskip-metadata-version-check"]
     }
@@ -39,6 +41,6 @@ tasks.register('buildPluginJar', Jar) {
     from sourceSets.main.output
     archiveBaseName.set('NetMockPlugin')
     manifest {
-        attributes('Manifest-Version': '1.0')
+        attributes('Manifest-Version': '1.1')
     }
 }
